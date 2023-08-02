@@ -8,19 +8,21 @@
 // 9 5 3 2
 // 8 4 4 2
 
+Console.Clear();
+
+
 Console.WriteLine($"\nВведите размер массива m x n:");
 int m = InputNumbers("Введите m: ");
 int n = InputNumbers("Введите n: ");
-
 int[,] array = new int[m, n];
-CreateArray(array);
-WriteArray(array);
+FillArray(array);
+PrintArray(array);
 
 Console.WriteLine($"\nОтсортированный массив: ");
-OrderArrayLines(array);
-WriteArray(array);
+GetSortArray(array);
+PrintArray(array);
 
-void OrderArrayLines(int[,] array)
+void GetSortArray(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
@@ -46,7 +48,7 @@ int InputNumbers(string input)
     return output;
 }
 
-void CreateArray(int[,] array)
+void FillArray(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
@@ -57,7 +59,7 @@ void CreateArray(int[,] array)
     }
 }
 
-void WriteArray(int[,] array)
+void PrintArray(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
